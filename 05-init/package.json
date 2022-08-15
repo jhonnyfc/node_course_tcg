@@ -1,0 +1,16 @@
+{
+  "name": "05-init",
+  "version": "1.0.0",
+  "description": "my project",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo 'Error no test scpecified' && exit",
+    "start-serve": "node app.js",
+    "start": "nodemon app.js"
+  },
+  "author": "jhonny",
+  "license": "MIT",
+  "devDependencies": {
+    "nodemon": "^2.0.19"
+  }
+}

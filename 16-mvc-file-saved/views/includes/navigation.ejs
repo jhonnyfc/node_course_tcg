@@ -1,0 +1,48 @@
+<header class="main-header">
+  <nav class="main-header__nav">
+    <ul class="main-header__item-list">
+      <li class="main-header__item">
+        <a
+          class="<%= pathName === navigationRoutes.index.name ? 'active' : '' %>"
+          href="<%= navigationRoutes.index.path %>"
+          >Shop</a
+        >
+      </li>
+      <li class="main-header__item">
+        <a
+          class="<%= pathName === navigationRoutes.products.name ? 'active' : '' %>"
+          href="<%= navigationRoutes.products.path %>"
+          >Products</a
+        >
+      </li>
+      <li class="main-header__item">
+        <a
+          class="<%= pathName === navigationRoutes.cart.name ? 'active' : '' %>"
+          href="<%= navigationRoutes.cart.path %>"
+          >Cart</a
+        >
+      </li>
+      <li class="main-header__item">
+        <a
+          class="<%= pathName === navigationRoutes.orders.name ? 'active' : '' %>"
+          href="<%= navigationRoutes.orders.path %>"
+          >Orders</a
+        >
+      </li>
+      <li class="main-header__item">
+        <a
+          class="<%= pathName === navigationRoutes.adminAddProduct.name ? 'active' : '' %>"
+          href="/admin<%= navigationRoutes.adminAddProduct.path %>"
+          >Add Prodcut</a
+        >
+      </li>
+      <li class="main-header__item">
+        <a
+          class="<%= pathName === navigationRoutes.adminGetProducts.name ? 'active' : '' %>"
+          href="/admin<%= navigationRoutes.adminGetProducts.path %>"
+          >Admin Prodcut</a
+        >
+      </li>
+    </ul>
+  </nav>
+</header>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include('../includes/head.ejs') %>
+    <link rel="stylesheet" href="/css/products.css" />
+  </head>
+  <body>
+    <%- include('../includes/navigation.ejs') %>
+
+    <h1>Cart Page</h1>
+    <main>
+      <% if (cartProducts.length > 0) { %>
+      <h2>Totla: <%= totalPrice %></h2>
+      <div class="grid">
+        <% for (let cartProduct of cartProducts) { %>
+        <article class="card product-item">
+          <header class="card__header">
+            <h1 class="product__title"><%= cartProduct.productData.title %></h1>
+          </header>
+          <div class="card__image">
+            <img
+              src="https://cdn.pixabay.com/photo/2016/03/31/20/51/book-1296045_960_720.png"
+              alt="A Book"
+            />
+          </div>
+          <div class="card__content">
+            <h2 class="product__price">
+              $<%= cartProduct.productData.price* cartProduct.qty %>
+            </h2>
+            <p class="product__description">
+              <%= cartProduct.productData.description %>
+            </p>
+            <p class="product__qty"><%= cartProduct.qty %></p>
+          </div>
+          <div class="card__actions">
+            <form
+              action="<%= navigationRoutes.cartDelete.path %>"
+              method="post"
+            >
+              <input
+                type="text"
+                name="productId"
+                id="productId"
+                value="<%= cartProduct.productData.id %>"
+                hidden
+              />
+              <button class="btn" type="submit">Delete from cart</button>
+            </form>
+          </div>
+        </article>
+        <% } %>
+      </div>
+      <% } else { %>
+      <h1>No prodcuts</h1>
+      <% } %>
+    </main>
+
+    <%- include('../includes/js-files.ejs') %>
+  </body>
+</html>
